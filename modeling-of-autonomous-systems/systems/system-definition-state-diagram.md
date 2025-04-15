@@ -2,9 +2,9 @@
 
 Modeling framework contains these two main equations:
 
-- x(t + 1) = F(x(t), v(t)) <-- the state value at time t + 1 is inside a function of a state value at the current time and internal value at the current time
+- x(t + 1) = F(x(t), v(t)) <-- the state value at time t + 1 is a function of a state value at the current time and internal value at the current time
 
-- (y(t), v(t)) = H(x(t), u(t)) <-- the output at the current time and the internal input at the current time is inside a function of the state at the current time and external input at the current time
+- (y(t), v(t)) = H(x(t), u(t)) <-- the output at the current time and the internal input at the current time is a function of the state at the current time and external input at the current time
 
 A general definition of a **system** S is a tuple S = (X, X0, U, V, Y, F, H) where:
 
@@ -26,7 +26,7 @@ A system is:
 - Autonomous if U is a singleton (from outside, we cannot affect the behavior of the system)
 - Deterministic/nondeterministic (deterministic if the set F(x, v) has at most 1 element)
 - Basic if U = V (external and internal input alphabets are the same)
-- Static if X is a singelton (system does not have any memory)
+- Static if X is a singleton (system does not have any memory)
 - Moore if the output does not depend explicitly on the input
 - Moore with state output if X = Y (the output is the state variable itself)
 - Simple if it is basic and Moore with state output
@@ -38,7 +38,7 @@ A pair (x, v) is blocking if F(x, v) is empty
 X = {pay, select, soda, beer}, X0 = {pay} <-- possible state values and initial state
 U = {insert_coin, get_soda, get_beer, t} <-- external input
 
-Transition are associated with action labels that indicate the actions that cause the transitions.
+Transitions are associated with action labels that indicate the actions that cause the transitions.
 
 - insert_coin, get_soda, get_beer, are user actions (inputs)
 - t denotes an activity that is not of interest to the modeler (it represents an internal activity of the vending machine)
@@ -59,9 +59,10 @@ A turnstile has two states: locked and unlocked.
 X = {1: locked, 2: unlocked}
 X0 = {1}
 U = {coin, push}
+Y = {locked, unlocked}
 
 F(1, push) = {1}, F(1, coin) = {2}, F(2, coin) = {2}, F(2, push) = {1}
-Y = {locked, unlocked}
+
 H(1, push) = {locked}, H(1, coin) = {locked}
 H(2, push) = {unlocked}, H(2, coin) = {unlocked}
 

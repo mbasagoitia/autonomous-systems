@@ -21,3 +21,19 @@ The equilibrium x = 0 is **asymptotically stable** if it is stable and ||x(t)|| 
 Interpretation: Trajectories not only stay close to equilibrium but actually converge to it.
 
 It is **globally asymptotically stable** if it is stable and x(t) --> 0 for every x(0) (any initial condition in the state space X).
+
+## Describing Evolution of Linear Systems
+
+x(t + 1) = Ax(t) where A = some matrix
+
+Given an initial state x(0) = [ x1(0) ]
+                              [ x2(0) ]
+
+Example: A = [ 0.9 0 ]
+             [ 0   1 ]
+
+Inductive pattern for any t > 0:
+
+x(t) = [ 0.9^t x1(0) ]
+       [    x2(0)    ]
+

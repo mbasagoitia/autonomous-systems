@@ -18,6 +18,6 @@ Unstable:
 
 If any eigenvalue has an absolute value greater than 1, the system is unstable.
 
-**Algebraic mutliplicity**: The number of times an eigenvalue appears as a root of the characteristic polynomial
+**Algebraic mutliplicity**: The number of times an eigenvalue appears as a root of the characteristic polynomial (det(lambda * I - A))
 
-**Geometric multiplicity**: The number of linearly independent eigenvectors associated with an eigenvalue
+**Geometric multiplicity**: The number of linearly independent eigenvectors associated with an eigenvalue, A * vi = lambda i * vi

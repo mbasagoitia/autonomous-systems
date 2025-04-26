@@ -18,5 +18,10 @@ A run for infinite words is an infinite state sequence in which Q0 belongs to Q 
 
 The accepted language Lw(A) is the set of infinite words over E that have an accepting run in A.
 
-## NBA for Linear Time Properties
+Any accepted state run can be broken into two parts: a finite prefix/word beginning with the inital state that eventually leads to an accepting state, and the accepting state with a self loop.
 
+In an NFA in which there are outgoing transitions from the accepting state, you can always construct another NFA with the same language where there are no outgoing transitions from the accepting state.
+
+To create finite/infinite repetition, need to add a transition to the successor of the initial state under the same symbol/transition.
+
+To concatenate NFA with NBA, make accepting states of NFA not accepting, and instead transition from the (previously accepting) state to successors of initial states of NBA under same symbols. Initial states of NBA is are longer the initial state.

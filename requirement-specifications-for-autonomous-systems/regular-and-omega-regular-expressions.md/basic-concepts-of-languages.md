@@ -5,7 +5,7 @@ To define a **language**, we need words or **strings**, which are made up of **s
 - Given an alphabet W = {a, b, c}
 - Strings over W are "omega" (empty string), "aab", "bac", etc.
 - W* denotes the set of all finite strings over W
-- W^omega denotes the set of all infintie strings over W
+- W^omega denotes the set of all infinite strings over W
 - If x is a string over W, then |x| denotes the length of x, such as |abc| = 3, |omega| = 0
 
 A language is a set of finite or infinite strings. Since languages are sets of strings, new languages may be constructed using operations on sets such as intersection, etc. and these four basic operations:

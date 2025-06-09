@@ -6,8 +6,6 @@ The **pre map** of a simple system S for a set Z which is a subset of U x X, kno
 
 Pre is monotone
 
-Simple trick:
-
 Ask: to find pre(Z), from which states and under which inputs can I reach this state Z? These transitions must be deterministic! If you can reach multiple different states under the same input from a given state, that state should NOT be included inside of pre(Z).
 
 ## Synthesis for Safety Specifications
@@ -54,4 +52,46 @@ j(x) = inf({i subset of real numbers} | s.t. x is subset of minimal fixed point 
 
 In other words, j(x) = lowest index i in which x would have been inside the projection of the ith iteration set that comes from the fixed point iteration; the index Zi in which the state we are interested in first appears in the fixed point iteration.
 
-## Synthesis Algorithms for Persistence, Recurrence, and Beyond
+## Synthesis Algorithms for Persistence
+
+Persistence formula: varphi = eventually always varsi
+
+This formula is often referred to as co-Buchi objective.
+
+There exists a finite system C so that C x S (feedback composition) satisfies varphi under the labeling map L iff the set of initial states of the system is a subset equal of the projection of fixed point Z infinity over the state set in which this fixed point is the fixed point of the nested minimal and maximal fixed point.
+
+Z infinity = uZ^u.vZ^v.(pre(Z^v) intersection Zvarsi) union pre(Z^u)
+
+Outer fixed point: minimal fixed point algorithm (non-shrinking)
+Inner fixed point: maximal fixed point algorithm (non-growing)
+
+Controller synthesis:
+
+j(x) = inf({i subset of real numbers} | s.t. x is subset of minimal fixed point projection)
+
+Suppose that X0 is subset equal to projection of Z infinity over the state set
+
+H'c(x)
+
+- u if (u, x) belongs to Zj(x) if j(x) < infinity
+- U (any input) otherwise
+
+## Synthesis Algorithms for Recurrence
+
+Recurrence formula: varphi = always eventually varsi
+
+This formula is often referred to as Buchi objective.
+
+Z infinity = vZ^v.uZ^u.(pre(Z^v) intersection Zvarsi) union pre(Z^u)
+
+Outer fixed point: maximal fixed point algorithm (non-growing)
+Inner fixed point: minimal fixed point algorithm (non-shrinking)
+
+Controller synthesis
+
+j(x) = inf({i subset of real numbers} | s.t. x is subset of minimal fixed point projection)
+
+H'c(x)
+
+- u if (u, x) belongs to Zj(x) if j(x) < infinity
+- U (any input) otherwise

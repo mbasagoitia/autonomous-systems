@@ -31,7 +31,7 @@ If the final state of the product never gets visited, this implies the system sa
 
 Any path on the product that reaches the accepting state is a counterexample of why the system violates P.
 
-**Does S product A satisfy "never final state?**
+**Does S product A satisfy "never final state?"**
 
 ## Product of a System
 
